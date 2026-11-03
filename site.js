@@ -28,7 +28,7 @@
     }
     parent.append(a);
   };
-  document.title = `${p.name} — Research & CV`;
+  document.title = `${p.name} — CV`;
   document.querySelector('meta[name="description"]').content = p.intro || `${p.name} — personal website`;
   byId("name").textContent = p.name;
   byId("wordmark").replaceChildren(document.createTextNode(p.name), el("span", "accent", "."));
@@ -83,8 +83,21 @@
     byId("award-list").append(row);
   });
   if (!p.awards?.length) byId("awards-section").hidden = true;
-  if (p.email) byId("contact-link").href = `mailto:${p.email}`;
-  else byId("contact-link").hidden = true;
+  byId("role").hidden = !p.role;
+  byId("intro").hidden = !p.intro;
+  byId("portrait").hidden = !p.photo;
+  byId("portrait").parentElement.classList.toggle("text-only", !p.photo);
+  byId("about").hidden = !p.bio?.length && !p.interests?.length;
+  byId("interests-heading").hidden = !p.interests?.length;
+  byId("publications").hidden = !p.publications?.length;
+  byId("education-column").hidden = !p.education?.length;
+  byId("experience-column").hidden = !p.experience?.length;
+  byId("background").hidden = !p.education?.length && !p.experience?.length;
+  byId("background").querySelector(".background-grid").classList.toggle("single-column", !p.education?.length || !p.experience?.length);
+  document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+    const section = document.querySelector(link.getAttribute("href"));
+    link.hidden = !section || section.hidden;
+  });
   byId("copyright").textContent = `© ${new Date().getFullYear()} ${p.name}`;
   byId("print-cv").addEventListener("click", () => window.print());
 })();
