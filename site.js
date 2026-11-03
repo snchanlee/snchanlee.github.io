@@ -31,7 +31,6 @@
   document.title = `${p.name} — CV`;
   document.querySelector('meta[name="description"]').content = p.intro || `${p.name} — personal website`;
   byId("name").textContent = p.name;
-  byId("wordmark").replaceChildren(document.createTextNode(p.name), el("span", "accent", "."));
   byId("role").textContent = p.role;
   byId("intro").textContent = p.intro;
   byId("initials").textContent = p.initials || p.name.split(/\s+/).map(s => s[0]).slice(0, 2).join("");
@@ -45,8 +44,8 @@
     byId("portrait").classList.add("has-photo");
   }
   if (p.email) addLink(byId("social-links"), p.email, `mailto:${p.email}`);
-  (p.links || []).forEach(link => addLink(byId("social-links"), `${link.label} ↗`, link.url));
-  addLink(byId("social-links"), "Download CV ↓", p.cv);
+  (p.links || []).forEach(link => addLink(byId("social-links"), link.label, link.url));
+  addLink(byId("social-links"), "CV (PDF)", p.cv);
   (p.bio || []).forEach(text => byId("bio").append(el("p", "", text)));
   (p.interests || []).forEach(text => byId("interests").append(el("span", "tag", text)));
   (p.publications || []).forEach(item => {
@@ -65,7 +64,7 @@
     if (item.venue) body.append(el("p", "venue", item.venue));
     if (item.note) body.append(el("p", "paper-note", item.note));
     const links = el("div", "paper-links");
-    (item.links || []).forEach(link => addLink(links, `${link.label} ↗`, link.url));
+    (item.links || []).forEach(link => addLink(links, link.label, link.url));
     body.append(links);
     if (item.year) row.append(el("span", "year", item.year));
     else row.classList.add("no-year");
