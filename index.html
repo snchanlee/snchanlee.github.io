@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Personal academic website and curriculum vitae.">
+  <meta name="theme-color" content="#f8f9f6">
+  <title>Your Name — Research & CV</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="profile.js" defer></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="wordmark" href="#" id="wordmark">Your Name<span class="accent">.</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a><a href="#publications">Publications</a><a href="#background">Background</a>
+      <button class="print-button" id="print-cv" type="button">Print CV <span aria-hidden="true">↗</span></button>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="name">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot"></span> RESEARCH · IDEAS · WORK</p>
+        <h1 id="name">Your Name</h1>
+        <p class="role" id="role"></p>
+        <p class="intro" id="intro"></p>
+        <div class="social-links" id="social-links"></div>
+      </div>
+      <div class="portrait" id="portrait" aria-label="Profile portrait placeholder">
+        <span class="portrait-label">A LITTLE INTRODUCTION</span>
+        <span class="initials" id="initials" aria-hidden="true">YN</span>
+        <span class="portrait-caption">Curiosity, made into work.</span>
+      </div>
+    </section>
+    <section class="content-section about-grid" id="about" aria-labelledby="about-title">
+      <div class="section-heading"><p class="section-index">01 / INTRODUCTION</p><h2 id="about-title">About me</h2></div>
+      <div><div class="prose" id="bio"></div><h3 class="small-heading">RESEARCH INTERESTS</h3><div class="tags" id="interests"></div></div>
+    </section>
+    <section class="content-section" id="publications" aria-labelledby="publications-title">
+      <div class="section-top"><div class="section-heading"><p class="section-index">02 / SELECTED WORK</p><h2 id="publications-title">Publications</h2></div><p class="section-note">Selected papers & research</p></div>
+      <div id="publication-list"></div>
+    </section>
+    <section class="content-section" id="background" aria-labelledby="background-title">
+      <div class="section-heading"><p class="section-index">03 / THE JOURNEY</p><h2 id="background-title">Background</h2></div>
+      <div class="background-grid"><div><h3 class="column-heading">Education</h3><div id="education-list"></div></div><div><h3 class="column-heading">Experience</h3><div id="experience-list"></div></div></div>
+    </section>
+    <section class="content-section" id="awards-section" aria-labelledby="awards-title"><div class="section-heading"><p class="section-index">04 / RECOGNITION</p><h2 id="awards-title">Honors & awards</h2></div><div id="award-list"></div></section>
+    <section class="contact" aria-labelledby="contact-title"><div><p class="section-index">LET’S CONNECT</p><h2 id="contact-title">Good work starts<br>with a conversation<span class="accent">.</span></h2></div><a class="contact-link" id="contact-link">Get in touch <span aria-hidden="true">↗</span></a></section>
+  </main>
+  <footer><span id="copyright"></span><span>Built with curiosity. Hosted on GitHub Pages.</span><a href="#">Back to top ↑</a></footer>
+  <noscript><p class="noscript">Please enable JavaScript to view this profile.</p></noscript>
+</body>
+</html>
