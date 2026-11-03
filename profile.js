@@ -5,8 +5,10 @@ window.PROFILE = {
   initials: "SL",
   role: "Ph.D. Student · Yonsei University",
   intro: "Electrical and Electronics Engineering · Seoul, South Korea",
+  lab: { name: "DATES Lab", url: "https://dates.yonsei.ac.kr/" },
+  advisor: "Prof. Joon-Sung Yang",
   email: "snchanlee@yonsei.ac.kr",
-  photo: "", // 예: "assets/profile.jpg"
+  photo: "assets/profile.jpeg",
   photoPosition: "center",
   cv: "", // 예: "assets/cv.pdf"
   links: [
@@ -15,6 +17,14 @@ window.PROFILE = {
   ],
   bio: [],
   interests: [],
+  news: [
+    { date: "2026", text: "N4LA accepted to HPCA 2027." },
+    { date: "2026", text: "HiLLM presented at MICRO 2026." },
+    { date: "2026", text: "CAPA presented at DAC 2026." },
+    { date: "Mar 2026", text: "Started my Ph.D. at Yonsei University in DATES Lab, advised by Prof. Joon-Sung Yang." },
+    { date: "Feb 2026", text: "Graduated from Yonsei University with a B.E. in System Semiconductor Engineering, Summa Cum Laude." },
+    { date: "Mar 2022", text: "Enrolled in System Semiconductor Engineering at Yonsei University." },
+  ],
   publications: [
     {
       year: "2027",

@@ -8,6 +8,8 @@ https://snchanlee.github.io/
 - `email`, `links`: 연락처와 외부 링크
 - `photo`, `cv`: 사진 및 CV PDF 경로. 파일을 `assets/`에 추가한 뒤 입력
 - `bio`, `interests`: 소개 문단과 연구 관심사. 문자열 배열
+- `lab`, `advisor`: 연구실 이름/링크와 지도교수
+- `news`: `{ date, text }` 객체 배열. 최신 소식부터 입력
 - `education`, `experience`: `{ date, title, organization, detail }` 객체 배열
 - `publications`: `{ year, title, authors, venue, note, links }` 객체 배열. `links`는 `{ label, url }` 배열
 - `awards`: `{ year, title, organization }` 객체 배열

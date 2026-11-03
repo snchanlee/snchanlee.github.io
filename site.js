@@ -34,6 +34,16 @@
   byId("site-name").textContent = p.name;
   byId("role").textContent = p.role;
   byId("intro").textContent = p.intro;
+  const affiliation = byId("affiliation");
+  if (p.lab?.name) {
+    if (safeUrl(p.lab.url)) addLink(affiliation, p.lab.name, p.lab.url);
+    else affiliation.append(document.createTextNode(p.lab.name));
+  }
+  if (p.advisor) {
+    if (affiliation.childNodes.length) affiliation.append(document.createTextNode(" · "));
+    affiliation.append(document.createTextNode(`Advisor: ${p.advisor}`));
+  }
+  affiliation.hidden = !p.lab?.name && !p.advisor;
   byId("initials").textContent = p.initials || p.name.split(/\s+/).map(s => s[0]).slice(0, 2).join("");
   if (safeUrl(p.photo)) {
     const img = el("img");
@@ -49,6 +59,12 @@
   addLink(byId("social-links"), "CV (PDF)", p.cv);
   (p.bio || []).forEach(text => byId("bio").append(el("p", "", text)));
   (p.interests || []).forEach(text => byId("interests").append(el("span", "tag", text)));
+  (p.news || []).forEach(item => {
+    const row = el("li", "news-item");
+    row.append(el("span", "news-date", item.date), el("span", "news-text", item.text));
+    byId("news-list").append(row);
+  });
+  byId("news").hidden = !p.news?.length;
   (p.publications || []).forEach(item => {
     const row = el("article", "publication");
     const body = el("div", "publication-body");
