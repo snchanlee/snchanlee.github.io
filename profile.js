@@ -16,13 +16,20 @@ window.PROFILE = {
   interests: [],
   publications: [
     {
+      year: "2027",
       title: "N4LA: Shift-Dominant NVFP4 LLM Accelerator via Structured Power-of-Two Remapping",
+      venue: "HPCA 2027",
+      note: "Accepted",
     },
     {
+      year: "2026",
       title: "CAPA: Convertibility-Aware Mixed-Precision Accelerator for Asymmetric GEMM in Weight-Only Quantized LLMs",
+      venue: "DAC 2026",
     },
     {
+      year: "2026",
       title: "HiLLM: Heterogeneous CPU–GPU Inference for Interactive MoE LLM Serving on Local Systems",
+      venue: "MICRO 2026",
     },
   ],
   education: [
@@ -36,7 +43,7 @@ window.PROFILE = {
       date: "Mar 2022 — Feb 2026",
       title: "B.E. in System Semiconductor Engineering",
       organization: "Yonsei University",
-      detail: "Summa Cum Laude",
+      detail: "",
     },
     {
       date: "Mar 2019 — Feb 2021",
@@ -47,6 +54,7 @@ window.PROFILE = {
   ],
   experience: [],
   awards: [
+    { year: "2026", title: "Summa Cum Laude", organization: "Yonsei University · B.E. in System Semiconductor Engineering" },
     { year: "2021", title: "Talent Award of Korea", organization: "" },
   ],
 };
