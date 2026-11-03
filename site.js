@@ -54,9 +54,10 @@
     const body = el("div", "publication-body");
     const title = el("h3", "paper-title", item.title);
     const authors = el("p", "authors");
-    const chunks = (item.authors || "").split(p.name);
+    const authorName = p.authorName || p.name;
+    const chunks = (item.authors || "").split(authorName);
     chunks.forEach((chunk, i) => {
-      if (i) authors.append(el("strong", "", p.name));
+      if (i) authors.append(el("strong", "", authorName));
       authors.append(document.createTextNode(chunk));
     });
     body.append(title);
