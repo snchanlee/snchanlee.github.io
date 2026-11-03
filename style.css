@@ -1,52 +1,57 @@
-/* Simple academic homepage. No external fonts or decorative components. */
+/* Academic homepage with restrained spacing and blue section headings. */
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
 html { scroll-padding-top: 20px; }
 body {
   margin: 0;
   background: #fff;
-  color: #222;
+  color: #30343a;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
-  line-height: 1.65;
+  line-height: 1.7;
 }
-a { color: #245887; text-decoration: none; }
+a { color: #315f91; text-decoration: none; }
 a:hover { text-decoration: underline; }
 a:focus-visible, button:focus-visible { outline: 2px solid #245887; outline-offset: 3px; }
-.site-header, main, footer { width: min(780px, calc(100% - 40px)); margin-inline: auto; }
-.site-header { padding-top: 32px; }
-nav { display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: baseline; font-size: 13px; }
+main, footer { width: min(900px, calc(100% - 48px)); margin-inline: auto; }
+.site-header { border-bottom: 1px solid #e7e9ed; }
+.header-inner { width: min(960px, calc(100% - 48px)); min-height: 70px; margin-inline: auto; display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+.site-name { font-size: 19px; font-weight: 600; color: #343b44; white-space: nowrap; }
+.site-name:hover { text-decoration: none; }
+nav { display: flex; flex-wrap: wrap; gap: 8px 22px; align-items: baseline; font-size: 13px; }
+nav a, .print-button { color: #5e6873; }
 .print-button {
   padding: 0;
   border: 0;
   background: none;
-  color: #245887;
+  color: #5e6873;
   font: inherit;
   cursor: pointer;
 }
 .print-button:hover { text-decoration: underline; }
-.hero { display: flex; align-items: flex-start; gap: 30px; padding: 30px 0 12px; }
+.hero { display: flex; align-items: flex-start; gap: 30px; padding: 43px 0 16px; }
 .hero-copy { flex: 1; min-width: 0; }
-h1 { margin: 0 0 10px; font-size: 30px; font-weight: 600; line-height: 1.3; }
-.role, .intro { margin: 3px 0; }
+h1 { margin: 0 0 10px; font-size: 32px; font-weight: 600; line-height: 1.3; }
+.role, .intro { margin: 5px 0; }
+.role { font-size: 16px; }
 .intro { color: #555; font-size: 14px; }
-.social-links { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-top: 12px; font-size: 14px; }
+.social-links { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-top: 16px; font-size: 14px; }
 .portrait { width: 130px; flex: 0 0 130px; }
 .portrait img { display: block; width: 100%; height: auto; }
 .initials { display: none; }
-.content-section { margin-top: 26px; }
-h2 { margin: 0 0 18px; padding-bottom: 5px; border-bottom: 1px solid #ddd; font-size: 20px; font-weight: 600; line-height: 1.4; }
+.content-section { margin-top: 32px; }
+h2 { margin: 0 0 22px; padding-bottom: 8px; border-bottom: 1px solid #e3e7ed; color: #345e89; font-size: 21px; font-weight: 600; line-height: 1.4; }
 h3, h4 { font-size: 15px; }
 .prose p { margin: 0 0 12px; }
 .small-heading, .column-heading { margin: 18px 0 10px; font-size: 15px; font-weight: 600; }
 .tags { display: flex; flex-wrap: wrap; gap: 0 16px; }
 .tag { font-size: 14px; }
-.publication { margin-bottom: 23px; }
+.publication { margin-bottom: 25px; }
 .publication > .year { display: none; }
-.paper-title { margin: 0 0 3px; font-size: 15px; line-height: 1.6; font-weight: 600; }
+.paper-title { margin: 0 0 5px; font-size: 16px; line-height: 1.6; font-weight: 600; }
 .authors, .venue { margin: 2px 0; font-size: 14px; }
 .authors strong { font-weight: 700; }
-.venue { font-style: italic; }
+.venue { font-style: italic; color: #4b5663; }
 .paper-note { display: inline; margin: 0; font-size: 13px; color: #555; }
 .paper-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; font-size: 13px; }
 .paper-links:empty { display: none; }
@@ -65,7 +70,9 @@ footer { margin-top: 40px; padding: 15px 0 24px; border-top: 1px solid #e5e5e5; 
 .skip-link:focus { top: 8px; }
 .noscript { margin: 20px; }
 @media (max-width: 560px) {
-  .site-header { padding-top: 22px; }
+  .header-inner { padding-block: 16px; min-height: 0; flex-direction: column; align-items: flex-start; gap: 10px; }
+  main, footer, .header-inner { width: calc(100% - 36px); }
+  nav { gap: 8px 18px; }
   .hero { padding-top: 24px; gap: 18px; }
   h1 { font-size: 27px; }
   .portrait { width: 85px; flex-basis: 85px; }

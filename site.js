@@ -31,6 +31,7 @@
   document.title = `${p.name} — CV`;
   document.querySelector('meta[name="description"]').content = p.intro || `${p.name} — personal website`;
   byId("name").textContent = p.name;
+  byId("site-name").textContent = p.name;
   byId("role").textContent = p.role;
   byId("intro").textContent = p.intro;
   byId("initials").textContent = p.initials || p.name.split(/\s+/).map(s => s[0]).slice(0, 2).join("");
