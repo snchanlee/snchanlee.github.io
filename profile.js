@@ -20,20 +20,20 @@ window.PROFILE = {
       year: "2027",
       title: "N4LA: Shift-Dominant NVFP4 LLM Accelerator via Structured Power-of-Two Remapping",
       authors: "S.-C. Lee, I. Choi, J. Moon, J.-Y. Lee and J.-S. Yang",
-      venue: "IEEE International Symposium on High-Performance Computer Architecture (HPCA), 2027",
+      venue: "33rd IEEE International Symposium on High-Performance Computer Architecture (HPCA), 2027",
       note: "Accepted",
     },
     {
       year: "2026",
       title: "CAPA: Convertibility-Aware Mixed-Precision Accelerator for Asymmetric GEMM in Weight-Only Quantized LLMs",
       authors: "J. Moon, I. Choi, S.-C. Lee and J.-S. Yang",
-      venue: "ACM/IEEE Design Automation Conference (DAC), 2026",
+      venue: "63rd ACM/IEEE Design Automation Conference (DAC), 2026",
     },
     {
       year: "2026",
       title: "HiLLM: Heterogeneous CPU–GPU Inference for Interactive MoE LLM Serving on Local Systems",
       authors: "I. Choi, S.-C. Lee and J.-S. Yang",
-      venue: "IEEE/ACM International Symposium on Microarchitecture (MICRO), 2026",
+      venue: "59th IEEE/ACM International Symposium on Microarchitecture (MICRO), 2026",
     },
   ],
   education: [

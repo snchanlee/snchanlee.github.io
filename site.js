@@ -111,5 +111,4 @@
     link.hidden = !section || section.hidden;
   });
   byId("copyright").textContent = `© ${new Date().getFullYear()} ${p.name}`;
-  byId("print-cv").addEventListener("click", () => window.print());
 })();

@@ -29,6 +29,7 @@ nav a, .print-button { color: #5e6873; }
   cursor: pointer;
 }
 .print-button:hover { text-decoration: underline; }
+.print-button:disabled { color: #a2a7ad; cursor: default; text-decoration: none; }
 .hero { display: flex; align-items: flex-start; gap: 30px; padding: 43px 0 16px; }
 .hero-copy { flex: 1; min-width: 0; }
 h1 { margin: 0 0 10px; font-size: 32px; font-weight: 600; line-height: 1.3; }

@@ -12,6 +12,6 @@ https://snchanlee.github.io/
 - `publications`: `{ year, title, authors, venue, note, links }` 객체 배열. `links`는 `{ label, url }` 배열
 - `awards`: `{ year, title, organization }` 객체 배열
 
-상단 Print CV로 인쇄하거나 PDF로 저장할 수 있습니다.
+상단 Print CV는 현재 비활성화되어 있습니다.
 
 설치나 빌드는 필요 없습니다. 로컬에서는 `index.html`을 브라우저로 열면 됩니다.
