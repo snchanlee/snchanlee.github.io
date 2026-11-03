@@ -44,7 +44,7 @@
     byId("portrait").append(img);
     byId("portrait").classList.add("has-photo");
   }
-  if (p.email) addLink(byId("social-links"), "Email ↗", `mailto:${p.email}`);
+  if (p.email) addLink(byId("social-links"), p.email, `mailto:${p.email}`);
   (p.links || []).forEach(link => addLink(byId("social-links"), `${link.label} ↗`, link.url));
   addLink(byId("social-links"), "Download CV ↓", p.cv);
   (p.bio || []).forEach(text => byId("bio").append(el("p", "", text)));
@@ -59,17 +59,22 @@
       if (i) authors.append(el("strong", "", p.name));
       authors.append(document.createTextNode(chunk));
     });
-    body.append(title, authors, el("p", "venue", item.venue));
+    body.append(title);
+    if (item.authors) body.append(authors);
+    if (item.venue) body.append(el("p", "venue", item.venue));
     if (item.note) body.append(el("p", "paper-note", item.note));
     const links = el("div", "paper-links");
     (item.links || []).forEach(link => addLink(links, `${link.label} ↗`, link.url));
     body.append(links);
-    row.append(el("span", "year", item.year), body);
+    if (item.year) row.append(el("span", "year", item.year));
+    else row.classList.add("no-year");
+    row.append(body);
     byId("publication-list").append(row);
   });
   const timeline = (id, items) => (items || []).forEach(item => {
     const entry = el("article", "timeline-entry");
-    entry.append(el("p", "date", item.date), el("h4", "", item.title), el("p", "organization", item.organization));
+    entry.append(el("p", "date", item.date), el("h4", "", item.title));
+    if (item.organization) entry.append(el("p", "organization", item.organization));
     if (item.detail) entry.append(el("p", "detail", item.detail));
     byId(id).append(entry);
   });
@@ -78,7 +83,8 @@
   (p.awards || []).forEach(item => {
     const row = el("article", "award");
     const text = el("div");
-    text.append(el("h3", "", item.title), el("p", "detail", item.organization));
+    text.append(el("h3", "", item.title));
+    if (item.organization) text.append(el("p", "detail", item.organization));
     row.append(el("span", "year", item.year), text);
     byId("award-list").append(row);
   });
@@ -94,6 +100,11 @@
   byId("experience-column").hidden = !p.experience?.length;
   byId("background").hidden = !p.education?.length && !p.experience?.length;
   byId("background").querySelector(".background-grid").classList.toggle("single-column", !p.education?.length || !p.experience?.length);
+  if (p.education?.length && !p.experience?.length) {
+    byId("background-title").textContent = "Education";
+    byId("education-column").querySelector(".column-heading").hidden = true;
+    document.querySelector('nav a[href="#background"]').textContent = "Education";
+  }
   document.querySelectorAll('nav a[href^="#"]').forEach(link => {
     const section = document.querySelector(link.getAttribute("href"));
     link.hidden = !section || section.hidden;

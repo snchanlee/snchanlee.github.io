@@ -2,9 +2,9 @@
 window.PROFILE = {
   name: "Seungchan Lee",
   initials: "SL",
-  role: "",
-  intro: "",
-  email: "",
+  role: "Ph.D. Student · Yonsei University",
+  intro: "Electrical and Electronics Engineering · Seoul, South Korea",
+  email: "snchanlee@yonsei.ac.kr",
   photo: "", // 예: "assets/profile.jpg"
   photoPosition: "center",
   cv: "", // 예: "assets/cv.pdf"
@@ -14,8 +14,39 @@ window.PROFILE = {
   ],
   bio: [],
   interests: [],
-  publications: [],
-  education: [],
+  publications: [
+    {
+      title: "N4LA: Shift-Dominant NVFP4 LLM Accelerator via Structured Power-of-Two Remapping",
+    },
+    {
+      title: "CAPA: Convertibility-Aware Mixed-Precision Accelerator for Asymmetric GEMM in Weight-Only Quantized LLMs",
+    },
+    {
+      title: "HiLLM: Heterogeneous CPU–GPU Inference for Interactive MoE LLM Serving on Local Systems",
+    },
+  ],
+  education: [
+    {
+      date: "Mar 2026 — Present",
+      title: "Ph.D. in Electrical and Electronics Engineering",
+      organization: "Yonsei University",
+      detail: "",
+    },
+    {
+      date: "Mar 2022 — Feb 2026",
+      title: "B.E. in System Semiconductor Engineering",
+      organization: "Yonsei University",
+      detail: "Summa Cum Laude",
+    },
+    {
+      date: "Mar 2019 — Feb 2021",
+      title: "Korea Science Academy of KAIST",
+      organization: "",
+      detail: "",
+    },
+  ],
   experience: [],
-  awards: [],
+  awards: [
+    { year: "2021", title: "Talent Award of Korea", organization: "" },
+  ],
 };
