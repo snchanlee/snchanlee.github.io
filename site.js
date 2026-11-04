@@ -34,6 +34,8 @@
   byId("site-name").textContent = p.name;
   byId("role").textContent = p.role;
   byId("intro").textContent = p.intro;
+  byId("summary").textContent = p.summary || "";
+  byId("summary").hidden = !p.summary;
   const affiliation = byId("affiliation");
   if (p.lab?.name) {
     if (safeUrl(p.lab.url)) addLink(affiliation, p.lab.name, p.lab.url);
@@ -50,7 +52,10 @@
     img.src = p.photo;
     img.alt = p.name;
     img.style.objectPosition = p.photoPosition || "center";
-    img.addEventListener("error", () => { img.remove(); byId("portrait").classList.remove("has-photo"); });
+    img.width = 1080;
+    img.height = 1440;
+    img.decoding = "async";
+    img.addEventListener("error", () => { img.remove(); byId("portrait").hidden = true; });
     byId("portrait").append(img);
     byId("portrait").classList.add("has-photo");
   }
@@ -61,12 +66,20 @@
   (p.interests || []).forEach(text => byId("interests").append(el("span", "tag", text)));
   (p.news || []).forEach(item => {
     const row = el("li", "news-item");
-    row.append(el("span", "news-date", item.date), el("span", "news-text", item.text));
+    const text = el("span", "news-text");
+    const paperIndex = item.paper ? item.text.indexOf(item.paper) : -1;
+    if (paperIndex >= 0 && item.publication) {
+      text.append(document.createTextNode(item.text.slice(0, paperIndex)));
+      addLink(text, item.paper, `#publication-${item.publication}`);
+      text.append(document.createTextNode(item.text.slice(paperIndex + item.paper.length)));
+    } else text.textContent = item.text;
+    row.append(el("span", "news-date", `[${item.date}]`), text);
     byId("news-list").append(row);
   });
   byId("news").hidden = !p.news?.length;
   (p.publications || []).forEach(item => {
     const row = el("article", "publication");
+    if (item.id) row.id = `publication-${item.id}`;
     const body = el("div", "publication-body");
     const title = el("h3", "paper-title", item.title);
     const authors = el("p", "authors");
@@ -78,8 +91,11 @@
     });
     body.append(title);
     if (item.authors) body.append(authors);
-    if (item.venue) body.append(el("p", "venue", item.venue));
-    if (item.note) body.append(el("p", "paper-note", item.note));
+    if (item.venue || item.note) {
+      const venue = el("p", "venue", item.venue);
+      if (item.note) venue.append(el("span", "paper-note", ` (${item.note})`));
+      body.append(venue);
+    }
     const links = el("div", "paper-links");
     (item.links || []).forEach(link => addLink(links, link.label, link.url));
     body.append(links);
