@@ -21,25 +21,25 @@ window.PROFILE = {
   news: [
     {
       date: "2026",
-      text: "My work, “N4LA: Shift-Dominant NVFP4 LLM Accelerator via Structured Power-of-Two Remapping,” has been accepted to the 33rd IEEE International Symposium on High-Performance Computer Architecture (HPCA 2027).",
+      text: "Our team’s work, “N4LA: Shift-Dominant NVFP4 LLM Accelerator via Structured Power-of-Two Remapping,” has been accepted to the 33rd IEEE International Symposium on High-Performance Computer Architecture (HPCA 2027).",
       paper: "N4LA: Shift-Dominant NVFP4 LLM Accelerator via Structured Power-of-Two Remapping",
       publication: "n4la",
     },
     {
       date: "2026",
-      text: "My work, “HiLLM: Heterogeneous CPU–GPU Inference for Interactive MoE LLM Serving on Local Systems,” was presented at the 59th IEEE/ACM International Symposium on Microarchitecture (MICRO 2026).",
+      text: "Our team’s work, “HiLLM: Heterogeneous CPU–GPU Inference for Interactive MoE LLM Serving on Local Systems,” has been accepted to the 59th IEEE/ACM International Symposium on Microarchitecture (MICRO 2026).",
       paper: "HiLLM: Heterogeneous CPU–GPU Inference for Interactive MoE LLM Serving on Local Systems",
       publication: "hillm",
     },
+    { date: "2026", text: "I joined DATES Lab at Yonsei University as a Ph.D. student." },
+    { date: "2026", text: "I received my B.E. from Yonsei University, graduating summa cum laude." },
     {
-      date: "2026",
-      text: "My work, “CAPA: Convertibility-Aware Mixed-Precision Accelerator for Asymmetric GEMM in Weight-Only Quantized LLMs,” was presented at the 63rd ACM/IEEE Design Automation Conference (DAC 2026).",
+      date: "2025",
+      text: "Our team’s work, “CAPA: Convertibility-Aware Mixed-Precision Accelerator for Asymmetric GEMM in Weight-Only Quantized LLMs,” has been accepted to the 63rd ACM/IEEE Design Automation Conference (DAC 2026).",
       paper: "CAPA: Convertibility-Aware Mixed-Precision Accelerator for Asymmetric GEMM in Weight-Only Quantized LLMs",
       publication: "capa",
     },
-    { date: "Mar 2026", text: "I joined DATES Lab at Yonsei University as a Ph.D. student." },
-    { date: "Feb 2026", text: "I received my B.E. from Yonsei University, graduating summa cum laude." },
-    { date: "Mar 2022", text: "I began my undergraduate studies at Yonsei University." },
+    { date: "2022", text: "I began my undergraduate studies at Yonsei University." },
   ],
   publications: [
     {
